@@ -1,0 +1,25 @@
+
+Assignment 1 - CSS Course Status
+================================
+
+Question 1: Stylesheet Paths
+
+Page: index.html
+href="styles.css"
+
+Page: pages/courses.html
+href="../styles.css"
+
+
+Question 2: CSS Selector for Full Course
+
+Selector:
+.course-card[data-status="full"] .status
+
+Explanation:
+This selector targets an element with the class
+"status" that is inside an element with the class
+"course-card" whose data-status attribute is "full".
+
+It applies a gray background color only to the
+status element, not to the entire course card.
