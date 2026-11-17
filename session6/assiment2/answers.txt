@@ -1,0 +1,29 @@
+Question 1 - Specificity
+
+Prediction: The h1 heading will appear purple because the ID selector has higher specificity than the class and element selectors.
+
+Observation: The heading appeared purple. In DevTools, the #course-title rule applied the color.
+
+Explanation: The ID selector #course-title has higher specificity than .title and h1. Therefore, the h1 rule does not win even though it appears later in the CSS file.
+
+Question 2 - Source Order
+
+Prediction: When the orange rule is placed after the green rule, the heading will become orange. When the orange rule is moved before the green rule, the heading will become green.
+
+Observation: The heading appeared orange when the orange rule was last. After moving the orange rule before the green rule, the heading appeared green.
+
+Explanation: Both .title rules have the same specificity. Therefore, the rule that appears later in the CSS file wins. This demonstrates the CSS Source Order principle.
+Question 3 - Inheritance
+
+Prediction: Both paragraphs initially inherit the color #374151 from the .course-card parent. After adding the new rule, only the introductory paragraph will become teal.
+
+Observation: Before the change, both paragraphs had the computed color rgb(55, 65, 81). After adding .course-card > p { color: teal; }, the introductory paragraph became teal (rgb(0, 128, 128)), while the schedule paragraph remained dark gray.
+
+Explanation: The child combinator > selects only direct child paragraphs of .course-card. The introductory paragraph is a direct child, but the schedule paragraph is inside .details, so it does not match the rule and continues inheriting the card's color. Using a space instead of > would select both paragraphs.
+Question 4 - Hover and Focus-visible
+
+Prediction: When I move the mouse pointer over the link, its color will change to red. When I navigate to the link using the Tab key, an orange outline will appear around it.
+
+Observation: The link turned red when I hovered over it and returned to its normal color when I moved the pointer away. When I focused on the link using Tab, an orange outline appeared.
+
+Explanation: The :hover pseudo-class applies styles when the mouse pointer is over the link. The :focus-visible pseudo-class displays a visible focus indicator during keyboard navigation, improving accessibility.
