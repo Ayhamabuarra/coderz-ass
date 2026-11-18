@@ -1,0 +1,40 @@
+Bug 1 - Incorrect Font Size Unit
+
+Before Fix: The CSS Foundations heading had a computed font size of 30px.
+Problematic Code: .course-card h2 { font-size: 1.5em; }
+Explanation: The em unit uses the parent element's font size (20px), resulting in 30px instead of the required 24px.
+Fix: Changed 1.5em to 1.5rem.
+Test and Result: I inspected the h2 element in DevTools Computed before and after the change. Its font size changed from 30px to 24px. The root font size remained 16px, the course card font size remained 20px, and styles.css was loaded during both measurements.
+
+
+
+Bug 2 - Incorrect CSS Variable and Inline Style
+
+Before Fix: The headings did not both use the intended brand color. The h1 heading appeared tomato because of its inline style.
+
+Problematic Code:
+color: var(--brnad);
+<h1 style="color: tomato;">coderz Institute</h1>
+
+Explanation: The CSS variable name was misspelled, and the inline style prevented h1 from using the brand color.
+
+Fix: Changed --brnad to --brand and removed the inline color from h1.
+
+Test and Result: I changed the --brand variable from #12546c to #e11d48 in :root. Both h1 and h2 changed to the test color. I then restored the original value #12546c, and both headings returned to the intended brand color.
+  
+
+
+
+  Bug 3 - Incorrect CSS Selectors
+
+Before Fix: The course card did not have the intended light blue background. Also, all paragraphs inside the card had a yellow background, including the day and price.
+
+Problematic Code:
+course-card { background: #eef5ff; }
+.course-card p { background: #fff4d9; }
+
+Explanation: The first selector was missing the dot required for a class selector. The second selector targeted all descendant paragraphs instead of only direct child paragraphs.
+
+Fix: Changed course-card to .course-card and .course-card p to .course-card > p.
+
+Test and Result: I refreshed the page and inspected the elements using DevTools. The entire course card displayed the light blue background #eef5ff, while only the introductory paragraph displayed the yellow background #fff4d9. The day and price paragraphs had no separate background, and the registration note remained outside the card on the white page background.
