@@ -1,0 +1,100 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F5F3FF;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 16px;
+    padding: 25px;
+    width: 850px;
+    max-width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+.trainer {
+    width: 300px;
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+.info {
+    flex: 1 1 300px;
+    min-width: 0;
+}
+
+h1 {
+    color: #183B42;
+    font-size: 42px;
+    margin: 0;
+}
+
+h2 {
+    color: #6D28D9;
+    font-size: 25px;
+    margin: 8px 0;
+}
+
+p {
+    color: #64748B;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.skills span {
+    background-color: #EDE9FE;
+    color: #6D28D9;
+    padding: 8px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+button {
+    padding: 12px 25px;
+    border: 2px solid #6D28D9;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.primary {
+    background-color: #6D28D9;
+    color: #FFFFFF;
+}
+
+.secondary {
+    background-color: #FFFFFF;
+    color: #6D28D9;
+}
